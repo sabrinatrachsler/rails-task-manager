@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
     # # As a user, I can list tasks
   def index
-    @tasks = Tasks.all
+    @tasks = Task.all
   end
 
   # # As a user, I can view the details of a task
