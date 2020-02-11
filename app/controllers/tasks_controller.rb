@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
   # # As a user, I can view the details of a task
   def show
-  #   @task = Tasks.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   # # As a user, I can add a new task

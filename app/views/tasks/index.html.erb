@@ -2,4 +2,5 @@
 <% @tasks.each do |task| %>
   <%= check_box_tag :completed %>
   <p><%= task.title %></p>
+  <% link_to task.title, task_path(task) %>
 <% end %>
