@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   # As a user, I can view the details of a task
   get "tasks/:id", to: "tasks#show", as: :task
 #   # As a user, I can add a new task
-#   get "tasks/new", to: "tasks#new"
-#   post "tasks", to: "tasks#create"
+  get "tasks/new", to: "tasks#new", as: :new
+  post "tasks", to: "tasks#create", as: :create
 #   # As a user, I can edit a task (mark as completed / update title & details)
-#   get "tasks/:id/edit", to: "tasks#edit"
-#   patch "tasks/:id", to: "tasks#update"
+  get "tasks/:id/edit", to: "tasks#edit", as: :edit
+  patch "tasks/:id", to: "tasks#update", as: :update
 #   # As a user, I can remove a task
-#   delete "tasks/:id", to: "tasks#destroy"
+  delete "tasks/:id", to: "tasks#destroy"
 end

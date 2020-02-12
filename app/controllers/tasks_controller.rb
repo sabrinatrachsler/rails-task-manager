@@ -11,30 +11,33 @@ class TasksController < ApplicationController
 
   # # As a user, I can add a new task
   def new
-  #   @tasks = Task.new
+    @tasks = Task.new
   end
 
   def create
-  #   Task.create(task_params)
-  #   redirect_to tasks_path
+    @task = Task.new(task_params)
+    @task.save
+    redirect_to task_path(@task)
   end
 
   # # As a user, I can edit a task (mark as completed / update title & details)
   def edit
-  #   @task = Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def update
-  #   @task = Task.find(params[:id])
-  #   @taks.update(task_params)
-  #   redirect_to task_path(@task)
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+
+    # no need for app/views/tasks/update.html.erb
+    redirect_to task_path(@task)
   end
 
   # # As a user, I can remove a task
   def destroy
-  #   @task = Task.find(params[:id])
-  #   @task.destroy
-  #   redirect_to tasks_path
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private
